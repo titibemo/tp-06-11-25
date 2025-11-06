@@ -15,11 +15,11 @@ def nav():
     print("====== 0. Quitter ======")
 
 def nav_search():
-    print("====== GESTION des films ======")
+    print("====== Rechercher des films ======")
     print("====== 1. Rechercher par titre ======")
-    print("====== 2. Rechercher par limite d'age TODO ======")
-    print("====== 3. Rechercher par année TODO ======")
-    print("====== 0. Quitter ======")
+    # print("====== 2. Rechercher par limite d'age TODO ======")
+    # print("====== 3. Rechercher par année TODO ======")
+    print("====== 0. Quitter la recherche ======")
 
 def main():
     while True:

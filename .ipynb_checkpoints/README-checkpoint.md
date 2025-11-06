@@ -34,43 +34,21 @@ Une fois cloné, ouvrez le dossier sur votre éditeur de texte.
 ```bash
 docker compose up -d
 ```
-il crééra un container se nommant tp-06-11-25 contenant un sous-container avec un nom: read-write, notre container d'exercice.
+il crééra un container se nommant tp-06-11-25 contenant un sous-container avec un nom: read-write, ne vous en souciez pas.
 
-enfin, pour intéragir avec le projet, rendez-vous sur votre plateforme docker, ouvrez un terminal (en bas à droite) et effectuez les commandes suivantes:
-
-```bash
-docker start read-write
-```
-Pour allumer votre conteneur si celui-ci n'est pas allumé.
+enfin, pour intéragir avec le projet, rendez-vous sur votre plateforme docker, ouvrez un terminal (en bas à droite) et effectuez la commande suivante:
 
 ```bash
-docker exec -it read-write bash
+docker run -it -p 8089:5000 --name tp-06-11-25  tp-06-11-25-read
 ```
-Pour rentrer dans le terminal du container
+il crééra un conteneur (se nommant tp-06-11-25) avec l'image créé précédemment. Vous devriez pouvoir, depuis le terminal de docker, utiliser le projet.
 
-```bash
-python main.py
-```
-Pour activer le script, vous pouvez alors intéragir avec l'exercice.
 
 ## Fin et suppression
 
-Une fois après avoir quitté l'application, n'oubliez pas d'arrêter ou de supprimer le conteneur avec les deux commandes suivantes :
+Une fois après avoir quitté l'application, n'oubliez pas de supprimer le conteneur avec les deux commandes suivantes :
 
 ```bash
-docker stop read-write
+docker rm tp-06-11-25
 docker rm read-write
 ```
-Pour stopper le container.
-
-
-```bash
-docker rm read-write
-```
-Pour supprimer le container. *Même en étant supprimé, Les données sont sauvegardées !*
-
-```bash
-docker volume rm tp-06-11-25_tp-volume
-```
-Pour supprimer définitivement le volume et les données associées.
-

@@ -34,7 +34,7 @@ services:
     networks:
       - tp-network
     volumes:
-      - tp-volume:/home/thierry
+      - tp-volume:/home/thierry/read/data
 
 volumes:
   tp-volume:
