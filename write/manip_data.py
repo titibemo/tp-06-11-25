@@ -17,11 +17,7 @@ def addmovie(user_title_movie, user_annee_prod_movie, user_genre_movie, user_age
             writer.writerows(modified_data)
 
 
-def updatemovie(idMovie):
-    user_title_movie = input("modification titre - Choisissez le nom de votre film ")
-    user_annee_prod_movie = input("modification année - Choisissez l'année de production: ")
-    user_genre_movie = input("modification genre - Choisissez le genre du film: ")
-    user_age_limit = input("modification age - Choisissez l'age limit du film: ")
+def updatemovie(idMovie, user_title_movie, user_annee_prod_movie, user_genre_movie, user_age_limit):
 
     modified_data = []
     id = 0
@@ -38,10 +34,6 @@ def updatemovie(idMovie):
     with open("read/data/movies.csv", "w", encoding="utf-8", newline="") as csv_file_write:
         writer = csv.writer(csv_file_write) 
         writer.writerows(modified_data)
-
-    
-if __name__ == '__main__':
-    pass
 
 def deletemovie(idMovie):
 
