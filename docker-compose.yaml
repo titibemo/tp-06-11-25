@@ -1,0 +1,43 @@
+name: tp-06-11-25
+services:
+
+#   read:
+#     build: ./read
+#     container_name: tp-06-11-2025
+#     ports:
+#       - 8808:5000
+#     networks:
+#       - tp-network
+#     volumes:
+#       - tp-volume:/home/thierry
+
+#   write:
+#     build: ./write
+#     container_name: tp-06-11-2025
+#     ports:
+#       - 8809:5000
+#     networks:
+#       - tp-network
+#     volumes:
+#       - tp-volume:/home/thierry
+# volumes:
+#   tp-volume:
+
+# networks:
+#   tp-network:
+
+  read:
+    build: .
+    container_name: read-write
+    ports:
+      - 8808:5000
+    networks:
+      - tp-network
+    volumes:
+      - tp-volume:/home/thierry
+
+volumes:
+  tp-volume:
+
+networks:
+  tp-network:

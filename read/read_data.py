@@ -7,6 +7,13 @@ def read_movie():
         print(', '.join(ligne))
     fichier.close()
 
+def read_movie_by_title(title):
+    with open("./read/data/movies.csv", "rt") as fichier:
+        lecteurCSV = csv.reader(fichier, delimiter=",")
+        for ligne in lecteurCSV:
+            if title.lower() in ligne[1].lower():
+                print(', '.join(ligne))
+
 if __name__ == '__main__':
     pass
 

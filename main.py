@@ -1,16 +1,24 @@
 from write.models.Movie import Movie
-from read.read_data import read_movie
+from read.read_data import read_movie, read_movie_by_title
 from write.manip_data import addmovie, updatemovie, deletemovie
 from write.exceptions import InvalidNumberException, InvalidAgeLimitException, InvalidGenreException, InvalidTitleException, InvalidYearException
 from write.exceptions.validationInputs import is_title_valid, is_annee_valid, is_genre_valid, is_age_valid, is_valid_number
 
 ##### nav
 def nav():
-    print("====== GESTION BIBLIOTHEQUE ======")
+    print("====== GESTION des films ======")
     print("====== 1. Voir les films ======")
     print("====== 2. ajouter un film ======")
     print("====== 3. modifier un film ======")
     print("====== 4. supprimer un film ======")
+    print("====== 5. rechercher par titre ======")
+    print("====== 0. Quitter ======")
+
+def nav_search():
+    print("====== GESTION des films ======")
+    print("====== 1. Rechercher par titre ======")
+    print("====== 2. Rechercher par limite d'age TODO ======")
+    print("====== 3. Rechercher par année TODO ======")
     print("====== 0. Quitter ======")
 
 def main():
@@ -62,6 +70,22 @@ def main():
                     print(e)
                 else:
                     deletemovie(user_input)
+            case "5":
+                while True:
+                    nav_search()
+                    user_input_search = input("Que voulez vous faire ? :")
+                    match user_input_search:
+                        case "1":
+                            user_title_movie = input("rechercher par titre de film: ")
+                            read_movie_by_title(user_title_movie)       
+                        case "2":
+                           pass
+                        case "3":
+                            pass
+                        case "0":
+                            break
+                        case "_":
+                            return print("saisi incorrecte")
             case "0":
                 print("🖐️  Merci et bonne journée")
                 exit()
