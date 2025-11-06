@@ -27,8 +27,8 @@ def main():
             case "2":
                 addmovie()
             case "3":
-                pass
-                updatemovie()
+                user_input = int(input("selectionner le numéro du film à effacer: "))
+                updatemovie(user_input)
             case "0":
                 print("🖐️  Merci et bonne journée")
                 exit()

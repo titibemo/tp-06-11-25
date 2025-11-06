@@ -4,7 +4,7 @@ def read_movie():
     fichier = open("./read/data/movies.csv", "rt")
     lecteurCSV = csv.reader(fichier, delimiter=",")
     for ligne in lecteurCSV:
-        print(ligne)
+        print(', '.join(ligne))
     fichier.close()
 
 if __name__ == '__main__':
