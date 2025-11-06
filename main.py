@@ -1,36 +1,37 @@
 from write.models.Movie import Movie
+from read.read_data import read_movie
+from write.manip_data import addmovie, updatemovie
+
+def nav():
+    print("====== GESTION BIBLIOTHEQUE ======")
+    print("====== 1. Voir les films ======")
+    print("====== 2. ajouter un film ======")
+    print("====== 3. modifier un film ======")
+    print("====== 0. Quitter ======")
 
 def main():
     pass
     # all_movie = [
     #     Movie("a", "b", "c", "d"),
-    # ]
+    # ]1
 
 
     
 
-    # while True:
-    #     user_input = input("Que voulez vous faire ? :")
-    #     match user_input:
-    #         case "1":
-    #             pass
-    #             # show_book(all_books)
-    #             # user_input = int(input("➡️  quel livre Voulez-vous CONSULTER ? "))
-    #             # all_books[user_input -1].consulter()             
-    #         case "2":
-    #             pass
-    #             # show_book(all_books)
-    #             # user_input = int(input("➡️  quel livre ou magazine voulez vous EMPRUNTER ? "))
-    #             # all_books[user_input -1].emprunter()
-    #         case "3":
-    #             pass
-    #             # show_book(all_books)
-    #             # user_input = int(input("➡️  quel livre ou magazine voulez vous RESTITUER ? "))
-    #             # all_books[user_input -1].rendre()
-    #         case "0":
-    #             pass
-    #             # print("🖐️  Merci et bonne journée")
-    #             # exit()
+    while True:
+        nav()
+        user_input = input("Que voulez vous faire ? :")
+        match user_input:
+            case "1":
+                read_movie()        
+            case "2":
+                addmovie()
+            case "3":
+                pass
+                updatemovie()
+            case "0":
+                print("🖐️  Merci et bonne journée")
+                exit()
 
 if __name__ == '__main__':
     main()
