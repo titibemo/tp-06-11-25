@@ -1,6 +1,7 @@
 from write.models.Movie import Movie
 from read.read_data import read_movie
 from write.manip_data import addmovie, updatemovie, deletemovie
+from write.exceptions import InvalidAgeLimitException, InvalidGenreException, InvalidTitleException, InvalidYearException
 
 def nav():
     print("====== GESTION BIBLIOTHEQUE ======")
