@@ -59,7 +59,6 @@ Une fois après avoir quitté l'application, n'oubliez pas d'arrêter ou de supp
 
 ```bash
 docker stop read-write
-docker rm read-write
 ```
 Pour stopper le container.
 
